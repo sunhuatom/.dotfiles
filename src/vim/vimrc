@@ -1,4 +1,5 @@
 " ----------------------------------------------------------------------
+"
 " | General Settings                                                   |
 " ----------------------------------------------------------------------
 
@@ -488,6 +489,7 @@ colorscheme solarized          " Use custom color scheme.
 " Use a different mapleader (default is "\").
 
 let mapleader = ","
+let maplocalleader = ",,"
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
