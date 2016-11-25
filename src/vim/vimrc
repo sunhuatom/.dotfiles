@@ -36,7 +36,7 @@ set cpoptions+=$               " When making a change, don't
                                " put a `$` sign at the end of
                                " the changed text.
 
-set colorcolumn=73             " Highlight certain column(s).
+set colorcolumn=80             " Highlight certain column(s).
 set cursorline                 " Highlight the current line.
 set directory=~/.vim/swaps     " Set directory for swap files.
 set encoding=utf-8 nobomb      " Use UTF-8 without BOM.
@@ -116,6 +116,8 @@ set wildmenu                   " Enable enhanced command-line
 
 set winminheight=0             " Allow windows to be squashed.
 
+"set auto spell checking
+autocmd BufRead *.tex setlocal spell
 
 " ----------------------------------------------------------------------
 " | Plugins                                                            |
@@ -169,6 +171,7 @@ call vundle#begin("~/.vim/plugins")
     Plugin 'tpope/vim-surround'
     "latex plugins
     Plugin 'lervag/vimtex'
+    Plugin 'vim-scripts/LanguageTool'
 call vundle#end()
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -578,7 +581,7 @@ nmap <leader>v :vsp $MYVIMRC<CR>
 " map <leader>W :w !sudo tee %<CR>
 
  " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-" [,pdate] put current date
+" [,idate] put current date
   map <Leader>pdate :put =strftime('%Y-%m-%d')<CR>
 
 " ----------------------------------------------------------------------
