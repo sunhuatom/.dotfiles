@@ -369,6 +369,7 @@ function! ToggleRelativeLineNumbers()
 
     if ( &relativenumber == 1 )
         set number
+        set norelativenumber
     else
         set relativenumber
     endif
@@ -411,7 +412,7 @@ if has("autocmd")
         " Automatically switch to absolute
         " line numbers when Vim loses focus.
 
-        autocmd FocusLost * :set number
+        autocmd FocusLost * :set number norelativenumber
 
         " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -425,7 +426,7 @@ if has("autocmd")
         " Automatically switch to absolute
         " line numbers when Vim is in insert mode.
 
-        autocmd InsertEnter * :set number
+        autocmd InsertEnter * :set number norelativenumber
 
         " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
