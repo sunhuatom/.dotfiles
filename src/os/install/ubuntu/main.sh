@@ -156,7 +156,7 @@ main() {
 #   update
 #   upgrade
 #   printf "\n"
-    install_apps
+#   install_apps
     printf "\n"
     autoremove
 
