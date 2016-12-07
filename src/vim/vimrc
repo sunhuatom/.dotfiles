@@ -149,6 +149,7 @@ call vundle#begin("~/.vim/plugins")
     Plugin 'VundleVim/Vundle.vim'
 
     Plugin 'altercation/vim-colors-solarized'
+    " Plugin 'flazz/vim-colorschemes'
     Plugin 'chrisbra/unicode.vim'
     Plugin 'editorconfig/editorconfig-vim'
     Plugin 'godlygeek/tabular'
@@ -258,8 +259,17 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 if filereadable("/usr/share/dict/words")
     set dictionary+=/usr/share/dict/words
 endif
+" ----------------------------------------------------------------------
+" | Plugins - NeoComplete|
+" ----------------------------------------------------------------------
 
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
 
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/plugins/neosnippet-snippets/neosnippets/'
+"
+"
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 " Make `<TAB>` autocomplete.
@@ -276,6 +286,14 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " let g:syntastic_html_checkers = [ "jshint" ]
 " let g:syntastic_javascript_checkers = [ "jshint" ]
+"
+" Disable syntax checking by default.
+
+let g:syntastic_mode_map = {
+    \ "active_filetypes": [],
+    \ "mode": "passive",
+    \ "passive_filetypes": []
+\}
 
 " ----------------------------------------------------------------------
 "  | Plugins - vimtex
@@ -290,16 +308,6 @@ let g:vimtex_latexmk_enabled = 0
 let g:vimtex_latexmk_callback = 0
 
 let g:vimtex_view_enabled = 0
-" ----------------------------------------------------------------------
-" Disable syntax checking by default.
-
-let g:syntastic_mode_map = {
-    \ "active_filetypes": [],
-    \ "mode": "passive",
-    \ "passive_filetypes": []
-\}
-
-
 " ----------------------------------------------------------------------
 " | Helper Functions                                                   |
 " ----------------------------------------------------------------------
